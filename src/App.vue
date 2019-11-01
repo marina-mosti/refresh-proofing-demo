@@ -3,9 +3,9 @@
     <img alt="Vue logo" src="./assets/logo.png">
 
     <form @submit.prevent="submit">
-      <BaseInput label="Email" name="email" v-model="form.email" />
-      <BaseInput label="Password" name="password" type="password" v-model="form.password" />
-      <BaseSelect label="Favorite noms" name="noms" :options="noms" v-model="form.noms" />
+      <BaseInput label="Email" name="email" :value="form.email" @input="updateForm('email', $event)" />
+      <BaseInput label="Password" name="password" type="password" :value="form.password" @input="updateForm('password', $event)" />
+      <BaseSelect label="Favorite noms" name="noms" :options="noms" :value="form.noms" @input="updateForm('noms', $event)" />
       <button type="submit">SEND!</button>
     </form>
   </div>
@@ -31,6 +31,10 @@ export default {
   methods: {
     submit () {
       console.log('Sent')
+    },
+    updateForm (param, value) {
+      this.form[param] = value
+      localStorage.setItem('form', JSON.stringify(this.form))
     }
   }
 }
