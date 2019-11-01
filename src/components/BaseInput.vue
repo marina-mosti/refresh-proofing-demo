@@ -43,10 +43,10 @@ export default {
     },
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
