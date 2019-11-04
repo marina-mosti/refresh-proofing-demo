@@ -36,6 +36,12 @@ export default {
       this.form[param] = value
       localStorage.setItem('form', JSON.stringify(this.form))
     }
+  },
+  created () {
+    const form = localStorage.getItem('form')
+    if (form) {
+      this.form = JSON.parse(form)
+    }
   }
 }
 </script>
