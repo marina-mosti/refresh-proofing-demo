@@ -3,8 +3,12 @@
     <img alt="Vue logo" src="./assets/logo.png">
 
     <form @submit.prevent="submit">
-      <BaseInput label="Email" name="email" :value="form.email" @input="updateForm('email', $event)" />
-      <BaseInput label="Password" name="password" type="password" :value="form.password" @input="updateForm('password', $event)" />
+      <BaseInput label="First name" name="firstName" :value="form.firstName" @input="updateForm('firstName', $event)" />
+      <BaseInput label="Last name" name="lastName" :value="form.lastName" @input="updateForm('lastName', $event)" />
+      <BaseInput label="Nickname" name="nickname" :value="form.nickname" @input="updateForm('nickname', $event)" />
+      <BaseInput label="Age" name="age" type="number" :value="form.age" @input="updateForm('age', $event)" />
+
+      <BaseSelect label="Shirt size" name="shirtSize" :options="shirts" :value="form.shirtSize" @input="updateForm('shirtSize', $event)" />
       <BaseSelect label="Favorite noms" name="noms" :options="noms" :value="form.noms" @input="updateForm('noms', $event)" />
       <button type="submit">SEND!</button>
     </form>
@@ -19,11 +23,21 @@ export default {
       noms: [
         { label: 'Apple', value: 'apple' },
         { label: 'Bannana', value: 'bannana' },
-        { label: 'Taco', value: 'taco' }
+        { label: 'Taco', value: 'taco' },
+        { label: '🥑', value: '🥑' }
+      ],
+      shirts: [
+        { label: 'S', value: 'small' },
+        { label: 'M', value: 'medium' },
+        { label: 'L', value: 'large' },
+        { label: 'H', value: 'hulk' },
+        { label: 'AM', value: 'antman' }
       ],
       form: {
-        email: '',
-        password: '',
+        firstName: '',
+        lastName: '',
+        nickname: '',
+        age: '',
         noms: ''
       }
     }
