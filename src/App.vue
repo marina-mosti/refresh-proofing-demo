@@ -7,6 +7,7 @@
       <BaseInput label="Last name" name="lastName" :value="form.lastName" @input="updateForm('lastName', $event)" />
       <BaseInput label="Nickname" name="nickname" :value="form.nickname" @input="updateForm('nickname', $event)" />
       <BaseInput label="Age" name="age" type="number" :value="form.age" @input="updateForm('age', $event)" />
+      <BaseInput label="CC Number" name="cc" :value="form.cc" @input="updateForm('cc', $event)" v-mask="'####-####-####-####'" />
 
       <BaseSelect label="Shirt size" name="shirtSize" :options="shirts" :value="form.shirtSize" @input="updateForm('shirtSize', $event)" />
       <BaseSelect label="Favorite noms" name="noms" :options="noms" :value="form.noms" @input="updateForm('noms', $event)" />

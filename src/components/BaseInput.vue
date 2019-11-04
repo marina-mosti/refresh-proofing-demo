@@ -2,6 +2,7 @@
   <div class="input">
     <label :for="name">{{ label }}</label>
     <input
+      v-bind="$attrs"
       :class="{
         'error': hasError,
         'green': !!value && !hasError
@@ -20,6 +21,7 @@
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     value: {
       type: [String, Number],
