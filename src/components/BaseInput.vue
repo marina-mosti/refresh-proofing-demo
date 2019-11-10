@@ -42,10 +42,6 @@ export default {
     hasError: {
       type: Boolean,
       default: false
-    },
-    type: {
-      type: String,
-      default: 'text'
     }
   }
 }
